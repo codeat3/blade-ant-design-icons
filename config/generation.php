@@ -1,42 +1,31 @@
 <?php
 
+use Codeat3\BladeIconGeneration\IconProcessor;
+
+class BladeAntDesignIcons extends IconProcessor {
+    public function postOptimization()
+    {
+        $this->svgLine = str_replace('<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">', '', $this->svgLine);
+        $this->svgLine = preg_replace('/\<\?xml.*\?\>/', '', $this->svgLine);
+        $this->svgLine = str_replace('stroke="black"', 'stroke="currentColor"', $this->svgLine);
+        $this->svgLine = str_replace('fill="black"', 'fill="currentColor"', $this->svgLine);
+
+        return $this;
+    }
+}
 $svgNormalization = static function (string $tempFilepath, array $iconSet) {
 
-    $doc = new DOMDocument();
-    $doc->formatOutput = false;
-    $doc->load($tempFilepath);
-
-    /**
-     * @var DOMElement $svgElement
-     */
-    $svgElement = $doc->getElementsByTagName('svg')[0];
-
-    // Remove all the attributes to control order of them on output
-    $svgElement->removeAttribute('width');
-    $svgElement->removeAttribute('height');
-    // $svgElement->removeAttribute('viewBox');
-    $svgElement->removeAttribute('fill');
-    // For some reason PHP's DOMElement likes to put xmlns first even if you don't touch it.
-    $svgElement->removeAttributeNS('http://www.w3.org/2000/svg', null);
-    // Add them back in the correct order to match current results...
-    $svgElement->setAttribute('fill', 'none');
-    $svgElement->setAttributeNS(null, 'xmlns', 'http://www.w3.org/2000/svg');
-    $svgElement->setAttribute('stroke', 'currentColor');
-
-    $doc->save($tempFilepath);
-
-    $svgLine = str_replace(PHP_EOL, '', file_get_contents($tempFilepath));
-    $svgLine = str_replace('<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">', '', $svgLine);
-    $svgLine = preg_replace('/\<\?xml.*\?\>/','',$svgLine);
-
-
-    file_put_contents($tempFilepath, $svgLine);
+    $iconProcessor = new BladeAntDesignIcons($tempFilepath, $iconSet);
+    $iconProcessor
+        ->optimize()
+        ->postOptimization()
+        ->save();
 };
 
 return [
     [
         // Define a source directory for the sets like a node_modules/ or vendor/ directory...
-        'source' => __DIR__.'/../node_modules/@ant-design/icons-svg/inline-namespaced-svg/filled',
+        'source' => __DIR__.'/../dist/packages/icons-svg/svg/filled',
 
 
         // Define a destination directory for your icons. The below is a good default...
@@ -48,10 +37,12 @@ return [
         // Call an optional callback to manipulate the icon
         // with the pathname of the icon and the settings from above...
         'after' => $svgNormalization,
+
+        'is-solid' => true,
     ],
     [
         // Define a source directory for the sets like a node_modules/ or vendor/ directory...
-        'source' => __DIR__.'/../node_modules/@ant-design/icons-svg/inline-namespaced-svg/outlined',
+        'source' => __DIR__.'/../dist/packages/icons-svg/svg/outlined',
 
         // Define a destination directory for your icons. The below is a good default...
         'destination' => __DIR__.'/../resources/svg',
@@ -64,5 +55,7 @@ return [
         // Call an optional callback to manipulate the icon
         // with the pathname of the icon and the settings from above...
         'after' => $svgNormalization,
+
+        'is-solid' => true,
     ],
 ];
