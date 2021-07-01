@@ -19,7 +19,6 @@ final class BladeAntDesignIconsServiceProvider extends ServiceProvider
 
             $factory->add('ant-design-icons', array_merge(['path' => __DIR__.'/../resources/svg'], $config));
         });
-
     }
 
     private function registerConfig(): void
@@ -39,5 +38,4 @@ final class BladeAntDesignIconsServiceProvider extends ServiceProvider
             ], 'blade-ant-design-icons-config');
         }
     }
-
 }
