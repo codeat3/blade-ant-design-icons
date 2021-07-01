@@ -2,23 +2,18 @@
 
 use Codeat3\BladeIconGeneration\IconProcessor;
 
-class BladeAntDesignIcons extends IconProcessor {
-    public function postOptimization()
-    {
-        $this->svgLine = str_replace('<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">', '', $this->svgLine);
-        $this->svgLine = preg_replace('/\<\?xml.*\?\>/', '', $this->svgLine);
-        $this->svgLine = str_replace('stroke="black"', 'stroke="currentColor"', $this->svgLine);
-        $this->svgLine = str_replace('fill="black"', 'fill="currentColor"', $this->svgLine);
-
-        return $this;
-    }
-}
 $svgNormalization = static function (string $tempFilepath, array $iconSet) {
 
-    $iconProcessor = new BladeAntDesignIcons($tempFilepath, $iconSet);
+    $iconProcessor = new IconProcessor($tempFilepath, $iconSet);
     $iconProcessor
         ->optimize()
-        ->postOptimization()
+        ->postOptimizationAsString(function ($svgLine) {
+            $svgLine = str_replace('<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">', '', $svgLine);
+            $svgLine = str_replace('stroke="black"', 'stroke="currentColor"', $svgLine);
+            $svgLine = str_replace('fill="black"', 'fill="currentColor"', $svgLine);
+
+            return $svgLine;
+        })
         ->save();
 };
 
