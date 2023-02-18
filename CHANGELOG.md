@@ -2,7 +2,19 @@
 
 This changelog follows [the Keep a Changelog standard](https://keepachangelog.com).
 
-## [Unreleased](https://github.com/codeat3/blade-ant-design-icons/compare/1.3.1...HEAD)
+## [Unreleased](https://github.com/codeat3/blade-ant-design-icons/compare/1.4.1...HEAD)
+
+## [1.4.1](https://github.com/codeat3/blade-ant-design-icons/compare/1.3.1...1.4.1) - 2023-02-18
+
+### What's Changed
+
+- Laravel 10 by @inmanturbo in https://github.com/codeat3/blade-ant-design-icons/pull/19
+
+### New Contributors
+
+- @inmanturbo made their first contribution in https://github.com/codeat3/blade-ant-design-icons/pull/19
+
+**Full Changelog**: https://github.com/codeat3/blade-ant-design-icons/compare/1.3.1...1.4.1
 
 ## [1.3.1](https://github.com/codeat3/blade-ant-design-icons/compare/1.2.1...1.3.1) - 2022-02-03
 
