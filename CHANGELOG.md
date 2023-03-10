@@ -2,7 +2,15 @@
 
 This changelog follows [the Keep a Changelog standard](https://keepachangelog.com).
 
-## [Unreleased](https://github.com/codeat3/blade-ant-design-icons/compare/1.4.1...HEAD)
+## [Unreleased](https://github.com/codeat3/blade-ant-design-icons/compare/1.5.1...HEAD)
+
+## [1.5.1](https://github.com/codeat3/blade-ant-design-icons/compare/1.4.1...1.5.1) - 2023-03-10
+
+### What's Changed
+
+- fixes few icons fill attribute to currentColor by @swapnilsarwe in https://github.com/codeat3/blade-ant-design-icons/pull/24
+
+**Full Changelog**: https://github.com/codeat3/blade-ant-design-icons/compare/1.4.1...1.5.1
 
 ## [1.4.1](https://github.com/codeat3/blade-ant-design-icons/compare/1.3.1...1.4.1) - 2023-02-18
 
