@@ -2,7 +2,15 @@
 
 This changelog follows [the Keep a Changelog standard](https://keepachangelog.com).
 
-## [Unreleased](https://github.com/codeat3/blade-ant-design-icons/compare/1.6.1...HEAD)
+## [Unreleased](https://github.com/codeat3/blade-ant-design-icons/compare/1.7.1...HEAD)
+
+## [1.7.1](https://github.com/codeat3/blade-ant-design-icons/compare/1.6.1...1.7.1) - 2023-09-01
+
+### What's Changed
+
+- chore: update icons with the latest commit [4ab94f3](https://github.com/ant-design/ant-design-icons/commit/4ab94f341f63deccd1b7fa296f47ed88b818a3fe) by @github-actions in https://github.com/codeat3/blade-ant-design-icons/pull/40
+
+**Full Changelog**: https://github.com/codeat3/blade-ant-design-icons/compare/1.6.1...1.7.1
 
 ## [1.6.1](https://github.com/codeat3/blade-ant-design-icons/compare/1.5.1...1.6.1) - 2023-08-07
 
