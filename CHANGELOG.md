@@ -2,7 +2,14 @@
 
 This changelog follows [the Keep a Changelog standard](https://keepachangelog.com).
 
-## [Unreleased](https://github.com/codeat3/blade-ant-design-icons/compare/1.7.1...HEAD)
+## [Unreleased](https://github.com/codeat3/blade-ant-design-icons/compare/2.0.0...HEAD)
+
+## [2.0.0](https://github.com/codeat3/blade-ant-design-icons/compare/1.7.1...2.0.0) - 2024-02-27
+
+- Dropped support for php 7.4
+- added support for laravel 11
+
+**Full Changelog**: https://github.com/codeat3/blade-ant-design-icons/compare/1.7.1...2.0.0
 
 ## [1.7.1](https://github.com/codeat3/blade-ant-design-icons/compare/1.6.1...1.7.1) - 2023-09-01
 
