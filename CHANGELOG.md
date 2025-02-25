@@ -2,7 +2,15 @@
 
 This changelog follows [the Keep a Changelog standard](https://keepachangelog.com).
 
-## [Unreleased](https://github.com/codeat3/blade-ant-design-icons/compare/1.8.0...HEAD)
+## [Unreleased](https://github.com/codeat3/blade-ant-design-icons/compare/1.9.0...HEAD)
+
+## [1.9.0](https://github.com/codeat3/blade-ant-design-icons/compare/1.8.0...1.9.0) - 2025-02-25
+
+### What's Changed
+
+* laravel 12 support added by @swapnilsarwe in https://github.com/codeat3/blade-ant-design-icons/pull/48
+
+**Full Changelog**: https://github.com/codeat3/blade-ant-design-icons/compare/1.8.0...1.9.0
 
 ## [1.8.0](https://github.com/codeat3/blade-ant-design-icons/compare/2.0.0...1.8.0) - 2024-02-28
 
